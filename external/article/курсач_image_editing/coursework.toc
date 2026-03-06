@@ -1,0 +1,12 @@
+\babel@toc {russian}{}\relax 
+\contentsline {section}{Аннотация}{3}{section*.2}%
+\contentsline {section}{Ключевые слова}{3}{section*.3}%
+\contentsline {section}{\numberline {1}Введение}{4}{section.1}%
+\contentsline {section}{\numberline {2}Обзор литературы}{6}{section.2}%
+\contentsline {paragraph}{Диффузионные модели и механизмы guidance.}{6}{section*.5}%
+\contentsline {paragraph}{VLM-guidance и оптимизация латентов.}{7}{section*.6}%
+\contentsline {paragraph}{VLM-gradient как обучающий сигнал для редактирования без пар.}{7}{section*.7}%
+\contentsline {paragraph}{Редактирование изображений и инверсия.}{8}{section*.8}%
+\contentsline {paragraph}{Stage-aware управление и proxy-prompts.}{8}{section*.9}%
+\contentsline {paragraph}{Позиционирование предлагаемого подхода.}{8}{section*.10}%
+\contentsline {section}{\numberline {3}Планируемые результаты работы}{9}{section.3}%
