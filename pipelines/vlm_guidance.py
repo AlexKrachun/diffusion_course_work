@@ -890,11 +890,11 @@ def run_vlm_guidance_pipeline_multiple_prompts(
 if __name__ == "__main__":
     
     results = run_vlm_guidance_pipeline_multiple_prompts(
-        prompts_file="prompts.txt",
-        output_root_dir="my_generations",
+        prompts_file="datasets/simple_cases.txt",
+        output_root_dir="simple_cases",
         negative_prompt="blurry, low quality",
         save_only_final_img=True,
-        final_img_filename="ind.png",
+        final_img_filename="img.png",
         gd_steps=2,
         gd_lr=1.0,
         gd_only_first_k_steps=5,
