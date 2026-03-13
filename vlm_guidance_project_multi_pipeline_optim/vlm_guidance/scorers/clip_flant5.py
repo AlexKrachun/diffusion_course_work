@@ -80,9 +80,13 @@ class CLIPFlanT5DifferentiableScorer(BaseDifferentiableScorer):
     def _patch_vision_tower_forward(self) -> None:
         vision_tower = self.model.get_vision_tower()
 
-        def differentiable_forward(this, images: torch.Tensor):
-            image_forward_outs = this.vision_tower(images.to(device=this.device, dtype=this.dtype), output_hidden_states=True)
-            image_features = this.feature_select(image_forward_outs).to(images.dtype)
+        def differentiable_forward(this, images):
+            tower_dtype = this.dtype
+            image_forward_outs = this.vision_tower(
+                images.to(device=this.device, dtype=tower_dtype),
+                output_hidden_states=True,
+            )
+            image_features = this.feature_select(image_forward_outs).to(dtype=tower_dtype)
             return image_features
 
         vision_tower.forward = types.MethodType(differentiable_forward, vision_tower)

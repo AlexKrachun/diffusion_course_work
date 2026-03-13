@@ -43,7 +43,7 @@ def safe_prompt_dirname(index: int, prompt: str, max_len: int = 80) -> str:
 
 @hydra.main(version_base=None, config_path="configs", config_name="batch_config")
 def main(cfg: DictConfig) -> None:
-    log.info("Resolved config:\n%s", OmegaConf.to_yaml(cfg, resolve=True))
+    log.info("Resolved config:\n%s", OmegaConf.to_yaml(cfg, resolve=False))
     prompts = read_prompts(cfg.batch.prompts_file, skip_empty_lines=cfg.batch.skip_empty_lines)
 
     root_dir = Path.cwd() / cfg.batch.output_root_dir
