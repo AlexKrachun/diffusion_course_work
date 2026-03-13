@@ -1,3 +1,4 @@
+from tqdm import tqdm
 import os
 import json
 import contextlib
@@ -851,7 +852,14 @@ def run_vlm_guidance_pipeline_multiple_prompts(
 
     all_results = []
 
-    for i, prompt in enumerate(prompts):
+    pbar = tqdm(
+        prompts,
+        desc="Generating images",
+        total=len(prompts),
+        dynamic_ncols=True,
+        leave=True,
+    )
+    for i, prompt in enumerate(pbar):
         prompt_save_dir = os.path.join(output_root_dir, _safe_prompt_dirname(i, prompt))
         os.makedirs(prompt_save_dir, exist_ok=True)
 
@@ -890,14 +898,14 @@ def run_vlm_guidance_pipeline_multiple_prompts(
 if __name__ == "__main__":
     
     results = run_vlm_guidance_pipeline_multiple_prompts(
-        prompts_file="datasets/simple_cases.txt",
-        output_root_dir="simple_cases",
+        prompts_file="datasets/subset.txt",
+        output_root_dir="subset",
         negative_prompt="blurry, low quality",
         save_only_final_img=True,
         final_img_filename="img.png",
         gd_steps=2,
-        gd_lr=1.0,
-        gd_only_first_k_steps=5,
+        gd_lr=1e-1 * 2,
+        gd_only_first_k_steps=10,
     )
     
     # results = run_vlm_guidance_pipeline_multiple_prompts(
