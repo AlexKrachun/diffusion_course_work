@@ -36,6 +36,8 @@ def safe_prompt_dirname(index: int, prompt: str, max_len: int = 80) -> str:
 def main(cfg: DictConfig) -> None:
     log.info("Resolved config:\n%s", OmegaConf.to_yaml(cfg, resolve=True))
     prompts = read_prompts(cfg.batch.prompts_file, skip_empty_lines=cfg.batch.skip_empty_lines)
+    if not prompts:
+        raise ValueError(f"No prompts found in {cfg.batch.prompts_file}")
 
     diffusion = instantiate(cfg.diffusion)
     scorer = instantiate(cfg.scorer)
@@ -46,8 +48,7 @@ def main(cfg: DictConfig) -> None:
     root_dir.mkdir(parents=True, exist_ok=True)
 
     for i, prompt in enumerate(tqdm(prompts, desc="Generating images", total=len(prompts), dynamic_ncols=True)):
-        run_cfg = instantiate(cfg.run)
-        run_cfg.prompt = prompt
+        run_cfg = instantiate(cfg.run, prompt=prompt)
         save_dir = root_dir / safe_prompt_dirname(i, prompt)
         runner = VQAGradientGuidanceRunner(diffusion=diffusion, scorer=scorer, run_cfg=run_cfg, guidance_cfg=guidance_cfg)
         result = runner.run(save_dir)

@@ -20,6 +20,8 @@ def main(cfg: DictConfig) -> None:
     diffusion = instantiate(cfg.diffusion)
     scorer = instantiate(cfg.scorer)
     run_cfg = instantiate(cfg.run)
+    if not run_cfg.prompt:
+        raise ValueError("config run.prompt must be set for single-run mode")
     guidance_cfg = instantiate(cfg.algorithm)
 
     runner = VQAGradientGuidanceRunner(

@@ -16,7 +16,7 @@ from vlm_guidance.utils.io import save_json
 
 @dataclass
 class RunConfig:
-    prompt: str
+    prompt: Optional[str] = None
     negative_prompt: str = ""
     height: int = 512
     width: int = 512
@@ -67,6 +67,9 @@ class VQAGradientGuidanceRunner:
         run_dir = Path(run_dir)
         run_dir.mkdir(parents=True, exist_ok=True)
         artifacts = self._make_artifact_dirs(run_dir)
+
+        if not self.run_cfg.prompt:
+            raise ValueError("run_cfg.prompt must be provided for an individual run.")
 
         (run_dir / "prompt.txt").write_text(self.run_cfg.prompt, encoding="utf-8")
         text_embeds = self.diffusion.encode_prompt(self.run_cfg.prompt, self.run_cfg.negative_prompt)
