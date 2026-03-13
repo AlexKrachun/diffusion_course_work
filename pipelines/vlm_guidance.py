@@ -772,6 +772,9 @@ def run_vlm_guidance_pipeline(
     Возвращает словарь с краткой информацией о прогоне.
     """
     os.makedirs(save_dir, exist_ok=True)
+    
+    with open(os.path.join(save_dir, "prompt.txt"), "w", encoding="utf-8") as f:
+        f.write(prompt)
 
     final_images, step_scores = generate_with_step_vqa_gd(
         prompt=prompt,
@@ -882,3 +885,24 @@ def run_vlm_guidance_pipeline_multiple_prompts(
     print(f"Done. Summary saved to: {summary_path}")
 
     return all_results
+
+
+if __name__ == "__main__":
+    
+    results = run_vlm_guidance_pipeline_multiple_prompts(
+        prompts_file="prompts.txt",
+        output_root_dir="my_generations",
+        negative_prompt="blurry, low quality",
+        save_only_final_img=True,
+        final_img_filename="ind.png",
+        gd_steps=2,
+        gd_lr=1.0,
+        gd_only_first_k_steps=5,
+    )
+    
+    # results = run_vlm_guidance_pipeline_multiple_prompts(
+    #     prompts_file="prompts.txt",
+    #     output_root_dir="my_generations_full_logs",
+    #     save_only_final_img=False,
+    #     final_img_filename="ind.png",
+    # )
