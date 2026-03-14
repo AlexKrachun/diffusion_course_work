@@ -2,7 +2,7 @@
 ```shell
 git clone https://github.com/AlexKrachun/diffusion_course_work
 cd diffusion_course_work/
-conda env create -f attempt_sgd_done/environment.yaml
+conda env create -f environment.yaml
 conda activate t2v
 pip install flash-attn --no-build-isolation
 pip install hydra-core
@@ -29,18 +29,22 @@ python -m vlm_guidance.run run.prompt="a cat on a chair" run.vqa_score=True run.
 запустить vanilla sd1.5, vqa guided sd1.5, flux1-dev на текстовом файле ../datasets/subset.txt - где каждая строка - это один промпт
 запускать внутри vlm_guidance_project_multi_pipeline_optim
 ```shell
-python -m vlm_guidance.batch_run batch.prompts_file=../datasets/subset.txt run.vqa_score=True run.vanilla_sd=True run.flux1=True    
+python -m vlm_guidance.batch_run batch.prompts_file=../datasets/simple_cases.txt run.vqa_score=True run.vanilla_sd=True run.flux1=True batch.output_root_dir=vlm_guidance_project_multi_pipeline_optim/simple_cases_generations    
+
+python -m vlm_guidance.batch_run batch.prompts_file=../datasets/complex_cases.txt run.vqa_score=True run.vanilla_sd=True run.flux1=True  batch.output_root_dir=vlm_guidance_project_multi_pipeline_optim/complex_cases_generations   
 ```
 
 
 посчитат и сохранить в csv файл clip score по папке с изображениями полученными разными пайплайнами (папка получена с помощью прогона `python -m vlm_guidance.batch_run`)
 ```shell
-python3 metrics/clip_score_clalc.py -generations vlm_guidance_project_multi_pipeline_optim/subset
+python3 metrics/clip_score_clalc.py -generations vlm_guidance_project_multi_pipeline_optim/simple_cases_generations --output metrics/clip_score_simple_result.csv
+python3 metrics/clip_score_clalc.py -generations vlm_guidance_project_multi_pipeline_optim/complex_cases_generations --output metrics/clip_score_complex_result.csv
 ```
 
 построить графики clip score по csv со значениями метрики 
 ```shell
 python3 metrics/clip_visualize.py --input metrics/clip_score_simple_result.csv --output-dir metrics/clip_plots_simple_data
+python3 metrics/clip_visualize.py --input metrics/clip_score_complex_result.csv --output-dir metrics/clip_score_complex_result
 
 ```
 
@@ -49,7 +53,6 @@ python3 metrics/clip_visualize.py --input metrics/clip_score_simple_result.csv -
 
 
 
-работаем с файлом metrics/clip_score.py. объясни мне, как устроен clip score пайплайн описанный в нем
 
 смотри, мне надо оценить clip score n пайплайнов генерации изображений. В моем случае сейчас n = 3. Посмотри, как устроена папка vlm_guidance_project_multi_pipeline_optim/subset - там на есть множество папок - по одной на промпт. В каждой из этих папок есть по одной подпапке на каждый пайплайн: flux1, vanilla_sd, vqa_score - всего три пайплайна сейчас. Внутри каждой из этих подпапок есть изображение img.png и промпт prompt.txt. Соостветсвенно я хотел бы запустить
 
