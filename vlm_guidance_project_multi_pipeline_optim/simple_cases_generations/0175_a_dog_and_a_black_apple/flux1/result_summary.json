@@ -1,0 +1,14 @@
+{
+  "pipeline_name": "flux1_dev",
+  "prompt": "a dog and a black apple",
+  "negative_prompt": "blurry, low quality",
+  "height": 512,
+  "width": 512,
+  "num_inference_steps": 30,
+  "guidance_scale": 7.5,
+  "seed": 42,
+  "batch_size": 1,
+  "image_paths": [
+    "/workspace/diffusion_course_work/vlm_guidance_project_multi_pipeline_optim/subset/0175_a_dog_and_a_black_apple/flux1/img_00.png"
+  ]
+}

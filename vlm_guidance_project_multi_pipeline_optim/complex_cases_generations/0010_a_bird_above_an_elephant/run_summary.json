@@ -1,0 +1,447 @@
+{
+  "vqa_score": {
+    "pipeline_name": "vqa_score",
+    "run": {
+      "prompt": "a bird above an elephant",
+      "negative_prompt": "blurry, low quality",
+      "height": 512,
+      "width": 512,
+      "num_inference_steps": 30,
+      "guidance_scale": 7.5,
+      "seed": 42,
+      "batch_size": 1,
+      "vqa_score": true,
+      "vanilla_sd": true,
+      "flux1": true
+    },
+    "guidance": {
+      "gd_steps": 2,
+      "gd_lr": 0.2,
+      "gd_only_first_k_steps": 10,
+      "normalize_grad": true,
+      "clamp_grad_value": 1.0,
+      "save_only_final_img": true,
+      "final_img_filename": "img.png",
+      "save_debug_tensors": false
+    },
+    "final_image_path": "/workspace/diffusion_course_work/vlm_guidance_project_multi_pipeline_optim/subset/0010_a_bird_above_an_elephant/vqa_score/img.png",
+    "final_score": 0.30873242020606995,
+    "steps": [
+      {
+        "timestep": 958,
+        "denoise_step": 0,
+        "gd_applied": true,
+        "vqa_score_after_gd": 0.10161841660737991,
+        "gd_stats": [
+          {
+            "timestep": 958,
+            "denoise_step": 0,
+            "gd_iter": 1,
+            "grad_norm_raw": 26.46875,
+            "score_before_update": 0.08438219875097275,
+            "loss_before_update": 2.4723987579345703
+          },
+          {
+            "timestep": 958,
+            "denoise_step": 0,
+            "gd_iter": 2,
+            "grad_norm_raw": 36.09375,
+            "score_before_update": 0.12041814625263214,
+            "loss_before_update": 2.1167850494384766
+          }
+        ]
+      },
+      {
+        "timestep": 925,
+        "denoise_step": 1,
+        "gd_applied": true,
+        "vqa_score_after_gd": 0.16606763005256653,
+        "gd_stats": [
+          {
+            "timestep": 925,
+            "denoise_step": 1,
+            "gd_iter": 1,
+            "grad_norm_raw": 20.25,
+            "score_before_update": 0.11676628887653351,
+            "loss_before_update": 2.147580862045288
+          },
+          {
+            "timestep": 925,
+            "denoise_step": 1,
+            "gd_iter": 2,
+            "grad_norm_raw": 16.40625,
+            "score_before_update": 0.14700543880462646,
+            "loss_before_update": 1.917285680770874
+          }
+        ]
+      },
+      {
+        "timestep": 925,
+        "denoise_step": 2,
+        "gd_applied": true,
+        "vqa_score_after_gd": 0.1764550656080246,
+        "gd_stats": [
+          {
+            "timestep": 925,
+            "denoise_step": 2,
+            "gd_iter": 1,
+            "grad_norm_raw": 39.21875,
+            "score_before_update": 0.15156519412994385,
+            "loss_before_update": 1.8867393732070923
+          },
+          {
+            "timestep": 925,
+            "denoise_step": 2,
+            "gd_iter": 2,
+            "grad_norm_raw": 18.34375,
+            "score_before_update": 0.15626023709774017,
+            "loss_before_update": 1.8562325239181519
+          }
+        ]
+      },
+      {
+        "timestep": 892,
+        "denoise_step": 3,
+        "gd_applied": true,
+        "vqa_score_after_gd": 0.14257705211639404,
+        "gd_stats": [
+          {
+            "timestep": 892,
+            "denoise_step": 3,
+            "gd_iter": 1,
+            "grad_norm_raw": 17.296875,
+            "score_before_update": 0.1515657603740692,
+            "loss_before_update": 1.8867356777191162
+          },
+          {
+            "timestep": 892,
+            "denoise_step": 3,
+            "gd_iter": 2,
+            "grad_norm_raw": 59.96875,
+            "score_before_update": 0.13409969210624695,
+            "loss_before_update": 2.009171724319458
+          }
+        ]
+      },
+      {
+        "timestep": 859,
+        "denoise_step": 4,
+        "gd_applied": true,
+        "vqa_score_after_gd": 0.22431208193302155,
+        "gd_stats": [
+          {
+            "timestep": 859,
+            "denoise_step": 4,
+            "gd_iter": 1,
+            "grad_norm_raw": 257.75,
+            "score_before_update": 0.12418358027935028,
+            "loss_before_update": 2.085994243621826
+          },
+          {
+            "timestep": 859,
+            "denoise_step": 4,
+            "gd_iter": 2,
+            "grad_norm_raw": 11.8515625,
+            "score_before_update": 0.20512457191944122,
+            "loss_before_update": 1.5841377973556519
+          }
+        ]
+      },
+      {
+        "timestep": 826,
+        "denoise_step": 5,
+        "gd_applied": true,
+        "vqa_score_after_gd": 0.24508893489837646,
+        "gd_stats": [
+          {
+            "timestep": 826,
+            "denoise_step": 5,
+            "gd_iter": 1,
+            "grad_norm_raw": 31.765625,
+            "score_before_update": 0.2523792088031769,
+            "loss_before_update": 1.376822590827942
+          },
+          {
+            "timestep": 826,
+            "denoise_step": 5,
+            "gd_iter": 2,
+            "grad_norm_raw": 21.703125,
+            "score_before_update": 0.2243112027645111,
+            "loss_before_update": 1.4947209358215332
+          }
+        ]
+      },
+      {
+        "timestep": 793,
+        "denoise_step": 6,
+        "gd_applied": true,
+        "vqa_score_after_gd": 0.26751649379730225,
+        "gd_stats": [
+          {
+            "timestep": 793,
+            "denoise_step": 6,
+            "gd_iter": 1,
+            "grad_norm_raw": 16.9375,
+            "score_before_update": 0.2450832724571228,
+            "loss_before_update": 1.4061572551727295
+          },
+          {
+            "timestep": 793,
+            "denoise_step": 6,
+            "gd_iter": 2,
+            "grad_norm_raw": 20.53125,
+            "score_before_update": 0.22430935502052307,
+            "loss_before_update": 1.4947291612625122
+          }
+        ]
+      },
+      {
+        "timestep": 760,
+        "denoise_step": 7,
+        "gd_applied": true,
+        "vqa_score_after_gd": 0.4161713421344757,
+        "gd_stats": [
+          {
+            "timestep": 760,
+            "denoise_step": 7,
+            "gd_iter": 1,
+            "grad_norm_raw": 21.96875,
+            "score_before_update": 0.3950066566467285,
+            "loss_before_update": 0.9288526773452759
+          },
+          {
+            "timestep": 760,
+            "denoise_step": 7,
+            "gd_iter": 2,
+            "grad_norm_raw": 16.609375,
+            "score_before_update": 0.3745329976081848,
+            "loss_before_update": 0.9820753931999207
+          }
+        ]
+      },
+      {
+        "timestep": 727,
+        "denoise_step": 8,
+        "gd_applied": true,
+        "vqa_score_after_gd": 0.5783185958862305,
+        "gd_stats": [
+          {
+            "timestep": 727,
+            "denoise_step": 8,
+            "gd_iter": 1,
+            "grad_norm_raw": 58.90625,
+            "score_before_update": 0.49495911598205566,
+            "loss_before_update": 0.7032800912857056
+          },
+          {
+            "timestep": 727,
+            "denoise_step": 8,
+            "gd_iter": 2,
+            "grad_norm_raw": 133.5,
+            "score_before_update": 0.5184825658798218,
+            "loss_before_update": 0.6568489074707031
+          }
+        ]
+      },
+      {
+        "timestep": 694,
+        "denoise_step": 9,
+        "gd_applied": true,
+        "vqa_score_after_gd": 0.18744517862796783,
+        "gd_stats": [
+          {
+            "timestep": 694,
+            "denoise_step": 9,
+            "gd_iter": 1,
+            "grad_norm_raw": 219.125,
+            "score_before_update": 0.12418254464864731,
+            "loss_before_update": 2.0860025882720947
+          },
+          {
+            "timestep": 694,
+            "denoise_step": 9,
+            "gd_iter": 2,
+            "grad_norm_raw": 383.5,
+            "score_before_update": 0.14257505536079407,
+            "loss_before_update": 1.9478867053985596
+          }
+        ]
+      },
+      {
+        "timestep": 661,
+        "denoise_step": 10,
+        "gd_applied": false,
+        "vqa_score_after_gd": 0.08978051692247391,
+        "gd_stats": []
+      },
+      {
+        "timestep": 628,
+        "denoise_step": 11,
+        "gd_applied": false,
+        "vqa_score_after_gd": 0.17645254731178284,
+        "gd_stats": []
+      },
+      {
+        "timestep": 595,
+        "denoise_step": 12,
+        "gd_applied": false,
+        "vqa_score_after_gd": 0.0733761265873909,
+        "gd_stats": []
+      },
+      {
+        "timestep": 562,
+        "denoise_step": 13,
+        "gd_applied": false,
+        "vqa_score_after_gd": 0.11497794836759567,
+        "gd_stats": []
+      },
+      {
+        "timestep": 529,
+        "denoise_step": 14,
+        "gd_applied": false,
+        "vqa_score_after_gd": 0.0856991782784462,
+        "gd_stats": []
+      },
+      {
+        "timestep": 496,
+        "denoise_step": 15,
+        "gd_applied": false,
+        "vqa_score_after_gd": 0.07808063924312592,
+        "gd_stats": []
+      },
+      {
+        "timestep": 463,
+        "denoise_step": 16,
+        "gd_applied": false,
+        "vqa_score_after_gd": 0.08308211714029312,
+        "gd_stats": []
+      },
+      {
+        "timestep": 430,
+        "denoise_step": 17,
+        "gd_applied": false,
+        "vqa_score_after_gd": 0.23105807602405548,
+        "gd_stats": []
+      },
+      {
+        "timestep": 397,
+        "denoise_step": 18,
+        "gd_applied": false,
+        "vqa_score_after_gd": 0.12610627710819244,
+        "gd_stats": []
+      },
+      {
+        "timestep": 364,
+        "denoise_step": 19,
+        "gd_applied": false,
+        "vqa_score_after_gd": 0.08703991770744324,
+        "gd_stats": []
+      },
+      {
+        "timestep": 331,
+        "denoise_step": 20,
+        "gd_applied": false,
+        "vqa_score_after_gd": 0.10161808133125305,
+        "gd_stats": []
+      },
+      {
+        "timestep": 298,
+        "denoise_step": 21,
+        "gd_applied": false,
+        "vqa_score_after_gd": 0.2243112474679947,
+        "gd_stats": []
+      },
+      {
+        "timestep": 265,
+        "denoise_step": 22,
+        "gd_applied": false,
+        "vqa_score_after_gd": 0.8548802733421326,
+        "gd_stats": []
+      },
+      {
+        "timestep": 232,
+        "denoise_step": 23,
+        "gd_applied": false,
+        "vqa_score_after_gd": 0.938406765460968,
+        "gd_stats": []
+      },
+      {
+        "timestep": 199,
+        "denoise_step": 24,
+        "gd_applied": false,
+        "vqa_score_after_gd": 0.9270685911178589,
+        "gd_stats": []
+      },
+      {
+        "timestep": 166,
+        "denoise_step": 25,
+        "gd_applied": false,
+        "vqa_score_after_gd": 0.9481313824653625,
+        "gd_stats": []
+      },
+      {
+        "timestep": 133,
+        "denoise_step": 26,
+        "gd_applied": false,
+        "vqa_score_after_gd": 0.9310388565063477,
+        "gd_stats": []
+      },
+      {
+        "timestep": 100,
+        "denoise_step": 27,
+        "gd_applied": false,
+        "vqa_score_after_gd": 0.6262232661247253,
+        "gd_stats": []
+      },
+      {
+        "timestep": 67,
+        "denoise_step": 28,
+        "gd_applied": false,
+        "vqa_score_after_gd": 0.717915415763855,
+        "gd_stats": []
+      },
+      {
+        "timestep": 34,
+        "denoise_step": 29,
+        "gd_applied": false,
+        "vqa_score_after_gd": 0.9139242768287659,
+        "gd_stats": []
+      },
+      {
+        "timestep": 1,
+        "denoise_step": 30,
+        "gd_applied": false,
+        "vqa_score_after_gd": 0.2523757517337799,
+        "gd_stats": []
+      }
+    ]
+  },
+  "vanilla_sd": {
+    "pipeline_name": "vanilla_sd15",
+    "prompt": "a bird above an elephant",
+    "negative_prompt": "blurry, low quality",
+    "height": 512,
+    "width": 512,
+    "num_inference_steps": 30,
+    "guidance_scale": 7.5,
+    "seed": 42,
+    "batch_size": 1,
+    "image_paths": [
+      "/workspace/diffusion_course_work/vlm_guidance_project_multi_pipeline_optim/subset/0010_a_bird_above_an_elephant/vanilla_sd/img_00.png"
+    ]
+  },
+  "flux1": {
+    "pipeline_name": "flux1_dev",
+    "prompt": "a bird above an elephant",
+    "negative_prompt": "blurry, low quality",
+    "height": 512,
+    "width": 512,
+    "num_inference_steps": 30,
+    "guidance_scale": 7.5,
+    "seed": 42,
+    "batch_size": 1,
+    "image_paths": [
+      "/workspace/diffusion_course_work/vlm_guidance_project_multi_pipeline_optim/subset/0010_a_bird_above_an_elephant/flux1/img_00.png"
+    ]
+  }
+}

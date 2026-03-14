@@ -1,0 +1,447 @@
+{
+  "vqa_score": {
+    "pipeline_name": "vqa_score",
+    "run": {
+      "prompt": "a rabbit and an orange backpack",
+      "negative_prompt": "blurry, low quality",
+      "height": 512,
+      "width": 512,
+      "num_inference_steps": 30,
+      "guidance_scale": 7.5,
+      "seed": 42,
+      "batch_size": 1,
+      "vqa_score": true,
+      "vanilla_sd": true,
+      "flux1": true
+    },
+    "guidance": {
+      "gd_steps": 2,
+      "gd_lr": 0.2,
+      "gd_only_first_k_steps": 10,
+      "normalize_grad": true,
+      "clamp_grad_value": 1.0,
+      "save_only_final_img": true,
+      "final_img_filename": "img.png",
+      "save_debug_tensors": false
+    },
+    "final_image_path": "/workspace/diffusion_course_work/vlm_guidance_project_multi_pipeline_optim/subset/0184_a_rabbit_and_an_orange_backpack/vqa_score/img.png",
+    "final_score": 0.9822156429290771,
+    "steps": [
+      {
+        "timestep": 958,
+        "denoise_step": 0,
+        "gd_applied": true,
+        "vqa_score_after_gd": 0.30872324109077454,
+        "gd_stats": [
+          {
+            "timestep": 958,
+            "denoise_step": 0,
+            "gd_iter": 1,
+            "grad_norm_raw": 17.59375,
+            "score_before_update": 0.19317054748535156,
+            "loss_before_update": 1.6441818475723267
+          },
+          {
+            "timestep": 958,
+            "denoise_step": 0,
+            "gd_iter": 2,
+            "grad_norm_raw": 13.5390625,
+            "score_before_update": 0.32656601071357727,
+            "loss_before_update": 1.119123101234436
+          }
+        ]
+      },
+      {
+        "timestep": 925,
+        "denoise_step": 1,
+        "gd_applied": true,
+        "vqa_score_after_gd": 0.20512241125106812,
+        "gd_stats": [
+          {
+            "timestep": 925,
+            "denoise_step": 1,
+            "gd_iter": 1,
+            "grad_norm_raw": 39.15625,
+            "score_before_update": 0.2598528563976288,
+            "loss_before_update": 1.347639799118042
+          },
+          {
+            "timestep": 925,
+            "denoise_step": 1,
+            "gd_iter": 2,
+            "grad_norm_raw": 30.921875,
+            "score_before_update": 0.2916601598262787,
+            "loss_before_update": 1.232166051864624
+          }
+        ]
+      },
+      {
+        "timestep": 925,
+        "denoise_step": 2,
+        "gd_applied": true,
+        "vqa_score_after_gd": 0.24508541822433472,
+        "gd_stats": [
+          {
+            "timestep": 925,
+            "denoise_step": 2,
+            "gd_iter": 1,
+            "grad_norm_raw": 28.890625,
+            "score_before_update": 0.2310550957918167,
+            "loss_before_update": 1.4650990962982178
+          },
+          {
+            "timestep": 925,
+            "denoise_step": 2,
+            "gd_iter": 2,
+            "grad_norm_raw": 14.1171875,
+            "score_before_update": 0.19317184388637543,
+            "loss_before_update": 1.6441750526428223
+          }
+        ]
+      },
+      {
+        "timestep": 892,
+        "denoise_step": 3,
+        "gd_applied": true,
+        "vqa_score_after_gd": 0.24508802592754364,
+        "gd_stats": [
+          {
+            "timestep": 892,
+            "denoise_step": 3,
+            "gd_iter": 1,
+            "grad_norm_raw": 23.546875,
+            "score_before_update": 0.1990693360567093,
+            "loss_before_update": 1.6141021251678467
+          },
+          {
+            "timestep": 892,
+            "denoise_step": 3,
+            "gd_iter": 2,
+            "grad_norm_raw": 10.3515625,
+            "score_before_update": 0.21134866774082184,
+            "loss_before_update": 1.5542460680007935
+          }
+        ]
+      },
+      {
+        "timestep": 859,
+        "denoise_step": 4,
+        "gd_applied": true,
+        "vqa_score_after_gd": 0.37453535199165344,
+        "gd_stats": [
+          {
+            "timestep": 859,
+            "denoise_step": 4,
+            "gd_iter": 1,
+            "grad_norm_raw": 17.171875,
+            "score_before_update": 0.4270099103450775,
+            "loss_before_update": 0.8509480357170105
+          },
+          {
+            "timestep": 859,
+            "denoise_step": 4,
+            "gd_iter": 2,
+            "grad_norm_raw": 59.375,
+            "score_before_update": 0.4491285979747772,
+            "loss_before_update": 0.800446093082428
+          }
+        ]
+      },
+      {
+        "timestep": 826,
+        "denoise_step": 5,
+        "gd_applied": true,
+        "vqa_score_after_gd": 0.7069079875946045,
+        "gd_stats": [
+          {
+            "timestep": 826,
+            "denoise_step": 5,
+            "gd_iter": 1,
+            "grad_norm_raw": 38.65625,
+            "score_before_update": 0.1990637481212616,
+            "loss_before_update": 1.6141301393508911
+          },
+          {
+            "timestep": 826,
+            "denoise_step": 5,
+            "gd_iter": 2,
+            "grad_norm_raw": 13.6875,
+            "score_before_update": 0.41616809368133545,
+            "loss_before_update": 0.8766660690307617
+          }
+        ]
+      },
+      {
+        "timestep": 793,
+        "denoise_step": 6,
+        "gd_applied": true,
+        "vqa_score_after_gd": 0.554244339466095,
+        "gd_stats": [
+          {
+            "timestep": 793,
+            "denoise_step": 6,
+            "gd_iter": 1,
+            "grad_norm_raw": 31.484375,
+            "score_before_update": 0.5303318500518799,
+            "loss_before_update": 0.6342523097991943
+          },
+          {
+            "timestep": 793,
+            "denoise_step": 6,
+            "gd_iter": 2,
+            "grad_norm_raw": 21.53125,
+            "score_before_update": 0.5303232073783875,
+            "loss_before_update": 0.6342686414718628
+          }
+        ]
+      },
+      {
+        "timestep": 760,
+        "denoise_step": 7,
+        "gd_applied": true,
+        "vqa_score_after_gd": 0.7495994567871094,
+        "gd_stats": [
+          {
+            "timestep": 760,
+            "denoise_step": 7,
+            "gd_iter": 1,
+            "grad_norm_raw": 94.75,
+            "score_before_update": 0.7696723937988281,
+            "loss_before_update": 0.26179036498069763
+          },
+          {
+            "timestep": 760,
+            "denoise_step": 7,
+            "gd_iter": 2,
+            "grad_norm_raw": 11.796875,
+            "score_before_update": 0.7597432732582092,
+            "loss_before_update": 0.2747747600078583
+          }
+        ]
+      },
+      {
+        "timestep": 727,
+        "denoise_step": 8,
+        "gd_applied": true,
+        "vqa_score_after_gd": 0.7178673148155212,
+        "gd_stats": [
+          {
+            "timestep": 727,
+            "denoise_step": 8,
+            "gd_iter": 1,
+            "grad_norm_raw": 14.34375,
+            "score_before_update": 0.638053297996521,
+            "loss_before_update": 0.44933342933654785
+          },
+          {
+            "timestep": 727,
+            "denoise_step": 8,
+            "gd_iter": 2,
+            "grad_norm_raw": 16.84375,
+            "score_before_update": 0.7178733348846436,
+            "loss_before_update": 0.33146223425865173
+          }
+        ]
+      },
+      {
+        "timestep": 694,
+        "denoise_step": 9,
+        "gd_applied": true,
+        "vqa_score_after_gd": 0.7887932062149048,
+        "gd_stats": [
+          {
+            "timestep": 694,
+            "denoise_step": 9,
+            "gd_iter": 1,
+            "grad_norm_raw": 19.390625,
+            "score_before_update": 0.7597611546516418,
+            "loss_before_update": 0.274751216173172
+          },
+          {
+            "timestep": 694,
+            "denoise_step": 9,
+            "gd_iter": 2,
+            "grad_norm_raw": 15.546875,
+            "score_before_update": 0.7887865900993347,
+            "loss_before_update": 0.23725953698158264
+          }
+        ]
+      },
+      {
+        "timestep": 661,
+        "denoise_step": 10,
+        "gd_applied": false,
+        "vqa_score_after_gd": 0.9091013073921204,
+        "gd_stats": []
+      },
+      {
+        "timestep": 628,
+        "denoise_step": 11,
+        "gd_applied": false,
+        "vqa_score_after_gd": 0.6380484104156494,
+        "gd_stats": []
+      },
+      {
+        "timestep": 595,
+        "denoise_step": 12,
+        "gd_applied": false,
+        "vqa_score_after_gd": 0.9481350183486938,
+        "gd_stats": []
+      },
+      {
+        "timestep": 562,
+        "denoise_step": 13,
+        "gd_applied": false,
+        "vqa_score_after_gd": 0.9744377136230469,
+        "gd_stats": []
+      },
+      {
+        "timestep": 529,
+        "denoise_step": 14,
+        "gd_applied": false,
+        "vqa_score_after_gd": 0.9564151167869568,
+        "gd_stats": []
+      },
+      {
+        "timestep": 496,
+        "denoise_step": 15,
+        "gd_applied": false,
+        "vqa_score_after_gd": 0.9675402641296387,
+        "gd_stats": []
+      },
+      {
+        "timestep": 463,
+        "denoise_step": 16,
+        "gd_applied": false,
+        "vqa_score_after_gd": 0.979920506477356,
+        "gd_stats": []
+      },
+      {
+        "timestep": 430,
+        "denoise_step": 17,
+        "gd_applied": false,
+        "vqa_score_after_gd": 0.9786673784255981,
+        "gd_stats": []
+      },
+      {
+        "timestep": 397,
+        "denoise_step": 18,
+        "gd_applied": false,
+        "vqa_score_after_gd": 0.9799213409423828,
+        "gd_stats": []
+      },
+      {
+        "timestep": 364,
+        "denoise_step": 19,
+        "gd_applied": false,
+        "vqa_score_after_gd": 0.9773390293121338,
+        "gd_stats": []
+      },
+      {
+        "timestep": 331,
+        "denoise_step": 20,
+        "gd_applied": false,
+        "vqa_score_after_gd": 0.9842531681060791,
+        "gd_stats": []
+      },
+      {
+        "timestep": 298,
+        "denoise_step": 21,
+        "gd_applied": false,
+        "vqa_score_after_gd": 0.9799206256866455,
+        "gd_stats": []
+      },
+      {
+        "timestep": 265,
+        "denoise_step": 22,
+        "gd_applied": false,
+        "vqa_score_after_gd": 0.9822132587432861,
+        "gd_stats": []
+      },
+      {
+        "timestep": 232,
+        "denoise_step": 23,
+        "gd_applied": false,
+        "vqa_score_after_gd": 0.9832659363746643,
+        "gd_stats": []
+      },
+      {
+        "timestep": 199,
+        "denoise_step": 24,
+        "gd_applied": false,
+        "vqa_score_after_gd": 0.9832628965377808,
+        "gd_stats": []
+      },
+      {
+        "timestep": 166,
+        "denoise_step": 25,
+        "gd_applied": false,
+        "vqa_score_after_gd": 0.9832637906074524,
+        "gd_stats": []
+      },
+      {
+        "timestep": 133,
+        "denoise_step": 26,
+        "gd_applied": false,
+        "vqa_score_after_gd": 0.9868888258934021,
+        "gd_stats": []
+      },
+      {
+        "timestep": 100,
+        "denoise_step": 27,
+        "gd_applied": false,
+        "vqa_score_after_gd": 0.9860629439353943,
+        "gd_stats": []
+      },
+      {
+        "timestep": 67,
+        "denoise_step": 28,
+        "gd_applied": false,
+        "vqa_score_after_gd": 0.9842563271522522,
+        "gd_stats": []
+      },
+      {
+        "timestep": 34,
+        "denoise_step": 29,
+        "gd_applied": false,
+        "vqa_score_after_gd": 0.9851873517036438,
+        "gd_stats": []
+      },
+      {
+        "timestep": 1,
+        "denoise_step": 30,
+        "gd_applied": false,
+        "vqa_score_after_gd": 0.9822147488594055,
+        "gd_stats": []
+      }
+    ]
+  },
+  "vanilla_sd": {
+    "pipeline_name": "vanilla_sd15",
+    "prompt": "a rabbit and an orange backpack",
+    "negative_prompt": "blurry, low quality",
+    "height": 512,
+    "width": 512,
+    "num_inference_steps": 30,
+    "guidance_scale": 7.5,
+    "seed": 42,
+    "batch_size": 1,
+    "image_paths": [
+      "/workspace/diffusion_course_work/vlm_guidance_project_multi_pipeline_optim/subset/0184_a_rabbit_and_an_orange_backpack/vanilla_sd/img_00.png"
+    ]
+  },
+  "flux1": {
+    "pipeline_name": "flux1_dev",
+    "prompt": "a rabbit and an orange backpack",
+    "negative_prompt": "blurry, low quality",
+    "height": 512,
+    "width": 512,
+    "num_inference_steps": 30,
+    "guidance_scale": 7.5,
+    "seed": 42,
+    "batch_size": 1,
+    "image_paths": [
+      "/workspace/diffusion_course_work/vlm_guidance_project_multi_pipeline_optim/subset/0184_a_rabbit_and_an_orange_backpack/flux1/img_00.png"
+    ]
+  }
+}

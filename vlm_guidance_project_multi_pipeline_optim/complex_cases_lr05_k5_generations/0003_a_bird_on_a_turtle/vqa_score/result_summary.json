@@ -1,0 +1,332 @@
+{
+  "pipeline_name": "vqa_score",
+  "run": {
+    "prompt": "a bird on a turtle",
+    "negative_prompt": "blurry, low quality",
+    "height": 512,
+    "width": 512,
+    "num_inference_steps": 30,
+    "guidance_scale": 7.5,
+    "seed": 42,
+    "batch_size": 1,
+    "vqa_score": true,
+    "vanilla_sd": false,
+    "flux1": false
+  },
+  "guidance": {
+    "gd_steps": 2,
+    "gd_lr": 0.5,
+    "gd_only_first_k_steps": 5,
+    "normalize_grad": true,
+    "clamp_grad_value": 1.0,
+    "save_only_final_img": true,
+    "final_img_filename": "img.png",
+    "save_debug_tensors": false
+  },
+  "final_image_path": "/workspace/diffusion_course_work/vlm_guidance_project_multi_pipeline_optim/complex_cases_lr05_k5_generations/0003_a_bird_on_a_turtle/vqa_score/img.png",
+  "final_score": 0.98688805103302,
+  "steps": [
+    {
+      "timestep": 958,
+      "denoise_step": 0,
+      "gd_applied": true,
+      "vqa_score_after_gd": 0.13827529549598694,
+      "gd_stats": [
+        {
+          "timestep": 958,
+          "denoise_step": 0,
+          "gd_iter": 1,
+          "grad_norm_raw": 186.625,
+          "score_before_update": 0.12806157767772675,
+          "loss_before_update": 2.055243968963623
+        },
+        {
+          "timestep": 958,
+          "denoise_step": 0,
+          "gd_iter": 2,
+          "grad_norm_raw": 152.0,
+          "score_before_update": 0.11676640063524246,
+          "loss_before_update": 2.1475799083709717
+        }
+      ]
+    },
+    {
+      "timestep": 925,
+      "denoise_step": 1,
+      "gd_applied": true,
+      "vqa_score_after_gd": 0.09701038151979446,
+      "gd_stats": [
+        {
+          "timestep": 925,
+          "denoise_step": 1,
+          "gd_iter": 1,
+          "grad_norm_raw": 11.0,
+          "score_before_update": 0.10161902010440826,
+          "loss_before_update": 2.286524534225464
+        },
+        {
+          "timestep": 925,
+          "denoise_step": 1,
+          "gd_iter": 2,
+          "grad_norm_raw": 68.0,
+          "score_before_update": 0.08570177108049393,
+          "loss_before_update": 2.4568817615509033
+        }
+      ]
+    },
+    {
+      "timestep": 925,
+      "denoise_step": 2,
+      "gd_applied": true,
+      "vqa_score_after_gd": 0.14257679879665375,
+      "gd_stats": [
+        {
+          "timestep": 925,
+          "denoise_step": 2,
+          "gd_iter": 1,
+          "grad_norm_raw": 65.0,
+          "score_before_update": 0.10161873698234558,
+          "loss_before_update": 2.286527395248413
+        },
+        {
+          "timestep": 925,
+          "denoise_step": 2,
+          "gd_iter": 2,
+          "grad_norm_raw": 23.140625,
+          "score_before_update": 0.10977976769208908,
+          "loss_before_update": 2.2092790603637695
+        }
+      ]
+    },
+    {
+      "timestep": 892,
+      "denoise_step": 3,
+      "gd_applied": true,
+      "vqa_score_after_gd": 0.13004329800605774,
+      "gd_stats": [
+        {
+          "timestep": 892,
+          "denoise_step": 3,
+          "gd_iter": 1,
+          "grad_norm_raw": 57.125,
+          "score_before_update": 0.09700853377580643,
+          "loss_before_update": 2.332956314086914
+        },
+        {
+          "timestep": 892,
+          "denoise_step": 3,
+          "gd_iter": 2,
+          "grad_norm_raw": 46.6875,
+          "score_before_update": 0.08438108116388321,
+          "loss_before_update": 2.472412109375
+        }
+      ]
+    },
+    {
+      "timestep": 859,
+      "denoise_step": 4,
+      "gd_applied": true,
+      "vqa_score_after_gd": 0.1016162857413292,
+      "gd_stats": [
+        {
+          "timestep": 859,
+          "denoise_step": 4,
+          "gd_iter": 1,
+          "grad_norm_raw": 222.25,
+          "score_before_update": 0.12610536813735962,
+          "loss_before_update": 2.0706374645233154
+        },
+        {
+          "timestep": 859,
+          "denoise_step": 4,
+          "gd_iter": 2,
+          "grad_norm_raw": 155.25,
+          "score_before_update": 0.12041699141263962,
+          "loss_before_update": 2.1167945861816406
+        }
+      ]
+    },
+    {
+      "timestep": 826,
+      "denoise_step": 5,
+      "gd_applied": false,
+      "vqa_score_after_gd": 0.12228322774171829,
+      "gd_stats": []
+    },
+    {
+      "timestep": 793,
+      "denoise_step": 6,
+      "gd_applied": false,
+      "vqa_score_after_gd": 0.10643873363733292,
+      "gd_stats": []
+    },
+    {
+      "timestep": 760,
+      "denoise_step": 7,
+      "gd_applied": false,
+      "vqa_score_after_gd": 0.16606634855270386,
+      "gd_stats": []
+    },
+    {
+      "timestep": 727,
+      "denoise_step": 8,
+      "gd_applied": false,
+      "vqa_score_after_gd": 0.23796962201595306,
+      "gd_stats": []
+    },
+    {
+      "timestep": 694,
+      "denoise_step": 9,
+      "gd_applied": false,
+      "vqa_score_after_gd": 0.728661835193634,
+      "gd_stats": []
+    },
+    {
+      "timestep": 661,
+      "denoise_step": 10,
+      "gd_applied": false,
+      "vqa_score_after_gd": 0.3547646701335907,
+      "gd_stats": []
+    },
+    {
+      "timestep": 628,
+      "denoise_step": 11,
+      "gd_applied": false,
+      "vqa_score_after_gd": 0.8932667970657349,
+      "gd_stats": []
+    },
+    {
+      "timestep": 595,
+      "denoise_step": 12,
+      "gd_applied": false,
+      "vqa_score_after_gd": 0.9139239192008972,
+      "gd_stats": []
+    },
+    {
+      "timestep": 562,
+      "denoise_step": 13,
+      "gd_applied": false,
+      "vqa_score_after_gd": 0.9310373067855835,
+      "gd_stats": []
+    },
+    {
+      "timestep": 529,
+      "denoise_step": 14,
+      "gd_applied": false,
+      "vqa_score_after_gd": 0.9832648038864136,
+      "gd_stats": []
+    },
+    {
+      "timestep": 496,
+      "denoise_step": 15,
+      "gd_applied": false,
+      "vqa_score_after_gd": 0.9348089694976807,
+      "gd_stats": []
+    },
+    {
+      "timestep": 463,
+      "denoise_step": 16,
+      "gd_applied": false,
+      "vqa_score_after_gd": 0.9832669496536255,
+      "gd_stats": []
+    },
+    {
+      "timestep": 430,
+      "denoise_step": 17,
+      "gd_applied": false,
+      "vqa_score_after_gd": 0.9897439479827881,
+      "gd_stats": []
+    },
+    {
+      "timestep": 397,
+      "denoise_step": 18,
+      "gd_applied": false,
+      "vqa_score_after_gd": 0.9903571009635925,
+      "gd_stats": []
+    },
+    {
+      "timestep": 364,
+      "denoise_step": 19,
+      "gd_applied": false,
+      "vqa_score_after_gd": 0.9897421598434448,
+      "gd_stats": []
+    },
+    {
+      "timestep": 331,
+      "denoise_step": 20,
+      "gd_applied": false,
+      "vqa_score_after_gd": 0.9876704216003418,
+      "gd_stats": []
+    },
+    {
+      "timestep": 298,
+      "denoise_step": 21,
+      "gd_applied": false,
+      "vqa_score_after_gd": 0.9868924617767334,
+      "gd_stats": []
+    },
+    {
+      "timestep": 265,
+      "denoise_step": 22,
+      "gd_applied": false,
+      "vqa_score_after_gd": 0.9842583537101746,
+      "gd_stats": []
+    },
+    {
+      "timestep": 232,
+      "denoise_step": 23,
+      "gd_applied": false,
+      "vqa_score_after_gd": 0.9868909120559692,
+      "gd_stats": []
+    },
+    {
+      "timestep": 199,
+      "denoise_step": 24,
+      "gd_applied": false,
+      "vqa_score_after_gd": 0.9832690954208374,
+      "gd_stats": []
+    },
+    {
+      "timestep": 166,
+      "denoise_step": 25,
+      "gd_applied": false,
+      "vqa_score_after_gd": 0.986061692237854,
+      "gd_stats": []
+    },
+    {
+      "timestep": 133,
+      "denoise_step": 26,
+      "gd_applied": false,
+      "vqa_score_after_gd": 0.9822096824645996,
+      "gd_stats": []
+    },
+    {
+      "timestep": 100,
+      "denoise_step": 27,
+      "gd_applied": false,
+      "vqa_score_after_gd": 0.9842467904090881,
+      "gd_stats": []
+    },
+    {
+      "timestep": 67,
+      "denoise_step": 28,
+      "gd_applied": false,
+      "vqa_score_after_gd": 0.9860621094703674,
+      "gd_stats": []
+    },
+    {
+      "timestep": 34,
+      "denoise_step": 29,
+      "gd_applied": false,
+      "vqa_score_after_gd": 0.9851836562156677,
+      "gd_stats": []
+    },
+    {
+      "timestep": 1,
+      "denoise_step": 30,
+      "gd_applied": false,
+      "vqa_score_after_gd": 0.9868906140327454,
+      "gd_stats": []
+    }
+  ]
+}

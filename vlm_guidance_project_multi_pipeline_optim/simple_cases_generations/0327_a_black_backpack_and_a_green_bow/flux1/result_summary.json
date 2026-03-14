@@ -1,0 +1,14 @@
+{
+  "pipeline_name": "flux1_dev",
+  "prompt": "a black backpack and a green bow",
+  "negative_prompt": "blurry, low quality",
+  "height": 512,
+  "width": 512,
+  "num_inference_steps": 30,
+  "guidance_scale": 7.5,
+  "seed": 42,
+  "batch_size": 1,
+  "image_paths": [
+    "/workspace/diffusion_course_work/vlm_guidance_project_multi_pipeline_optim/subset/0327_a_black_backpack_and_a_green_bow/flux1/img_00.png"
+  ]
+}

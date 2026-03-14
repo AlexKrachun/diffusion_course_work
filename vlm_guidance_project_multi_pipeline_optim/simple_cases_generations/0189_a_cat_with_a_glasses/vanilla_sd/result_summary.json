@@ -1,0 +1,14 @@
+{
+  "pipeline_name": "vanilla_sd15",
+  "prompt": "a cat with a glasses",
+  "negative_prompt": "blurry, low quality",
+  "height": 512,
+  "width": 512,
+  "num_inference_steps": 30,
+  "guidance_scale": 7.5,
+  "seed": 42,
+  "batch_size": 1,
+  "image_paths": [
+    "/workspace/diffusion_course_work/vlm_guidance_project_multi_pipeline_optim/subset/0189_a_cat_with_a_glasses/vanilla_sd/img_00.png"
+  ]
+}

@@ -92,3 +92,4 @@ batch:
 [2026-03-14 21:13:05,846][root][INFO] - gcc -pthread -B /root/miniconda3/envs/t2v/compiler_compat /tmp/tmpibpet3s9/test.o -L/usr/local/cuda -L/usr/local/cuda/lib64 -lcufile -o /tmp/tmpibpet3s9/a.out
 [2026-03-14 21:13:05,885][root][INFO] - gcc -pthread -B /root/miniconda3/envs/t2v/compiler_compat -Wno-unused-result -Wsign-compare -DNDEBUG -fwrapv -O2 -Wall -fPIC -O2 -isystem /root/miniconda3/envs/t2v/include -fPIC -O2 -isystem /root/miniconda3/envs/t2v/include -fPIC -c /tmp/tmpljo0azdr/test.c -o /tmp/tmpljo0azdr/test.o
 [2026-03-14 21:13:05,905][root][INFO] - gcc -pthread -B /root/miniconda3/envs/t2v/compiler_compat /tmp/tmpljo0azdr/test.o -laio -o /tmp/tmpljo0azdr/a.out
+[2026-03-14 21:30:36,531][__main__][INFO] - Completed 100 prompts across 1 pipelines. Summary saved to /workspace/diffusion_course_work/vlm_guidance_project_multi_pipeline_optim/complex_cases_lr05_k5_generations/run_summary.json
