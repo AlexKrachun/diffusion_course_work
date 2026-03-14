@@ -2,7 +2,7 @@
 ```shell
 git clone https://github.com/AlexKrachun/diffusion_course_work
 cd diffusion_course_work/
-conda env create -f vlm_guidance_project_multi_pipeline_optim/environment.yml
+conda env create -f vlm_guidance_project_multi_pipeline_optim/environment.yaml
 conda activate t2v
 pip install flash-attn --no-build-isolation
 ```
