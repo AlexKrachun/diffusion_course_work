@@ -55,10 +55,12 @@ class Text2ImageRunner:
         seed: Optional[int] = None,
         batch_size: int = 1,
         image_filename_template: str = "img_{index:02d}.png",
+        prompt_filename: str = "prompt.txt",
+        summary_filename: str = "result_summary.json",
     ) -> Dict[str, Any]:
         run_dir = Path(run_dir)
         run_dir.mkdir(parents=True, exist_ok=True)
-        (run_dir / "prompt.txt").write_text(prompt, encoding="utf-8")
+        (run_dir / prompt_filename).write_text(prompt, encoding="utf-8")
 
         images = self.pipeline.generate(
             prompt=prompt,
@@ -90,5 +92,5 @@ class Text2ImageRunner:
             "batch_size": batch_size,
             "image_paths": image_paths,
         }
-        save_json(result, run_dir / "result_summary.json")
+        save_json(result, run_dir / summary_filename)
         return result

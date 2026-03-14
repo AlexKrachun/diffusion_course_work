@@ -2,9 +2,10 @@
 ```shell
 git clone https://github.com/AlexKrachun/diffusion_course_work
 cd diffusion_course_work/
-conda env create -f vlm_guidance_project_multi_pipeline_optim/environment.yaml
+conda env create -f attempt_sgd_done/environment.yaml
 conda activate t2v
 pip install flash-attn --no-build-isolation
+pip install hydra-core
 ```
 
 корректно исполнялось на cuda 12.8 на A100 80 gb. 

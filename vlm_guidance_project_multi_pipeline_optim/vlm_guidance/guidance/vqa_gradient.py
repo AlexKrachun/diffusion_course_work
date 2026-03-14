@@ -65,7 +65,13 @@ class VQAGradientGuidanceRunner:
             d.mkdir(parents=True, exist_ok=True)
         return dirs
 
-    def run(self, run_dir: str | Path = ".") -> Dict[str, Any]:
+    def run(
+        self,
+        run_dir: str | Path = ".",
+        prompt_filename: str = "prompt.txt",
+        scores_filename: str = "scores.json",
+        summary_filename: str = "result_summary.json",
+    ) -> Dict[str, Any]:
         if not self.run_cfg.prompt:
             raise ValueError("run.prompt must be provided for VQA guidance runs.")
 
@@ -73,7 +79,7 @@ class VQAGradientGuidanceRunner:
         run_dir.mkdir(parents=True, exist_ok=True)
         artifacts = self._make_artifact_dirs(run_dir)
 
-        (run_dir / "prompt.txt").write_text(self.run_cfg.prompt, encoding="utf-8")
+        (run_dir / prompt_filename).write_text(self.run_cfg.prompt, encoding="utf-8")
         text_embeds = self.diffusion.encode_prompt(self.run_cfg.prompt, self.run_cfg.negative_prompt)
         self.diffusion.set_timesteps(self.run_cfg.num_inference_steps)
         latents = self.diffusion.init_latents(
@@ -195,6 +201,6 @@ class VQAGradientGuidanceRunner:
             "final_score": final_score,
             "steps": step_records,
         }
-        save_json(meta, run_dir / "scores.json")
-        save_json(meta, run_dir / "result_summary.json")
+        save_json(meta, run_dir / scores_filename)
+        save_json(meta, run_dir / summary_filename)
         return meta

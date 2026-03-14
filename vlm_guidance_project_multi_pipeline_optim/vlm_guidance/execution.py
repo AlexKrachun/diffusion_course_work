@@ -72,7 +72,14 @@ def instantiate_pipeline_runner(cfg: DictConfig, pipeline_name: str):
     raise ValueError(f"Unknown pipeline: {pipeline_name}")
 
 
-def run_single_pipeline(runner, cfg: DictConfig, pipeline_name: str, run_dir: Path, prompt: str) -> Dict[str, Any]:
+def run_single_pipeline(
+    runner,
+    cfg: DictConfig,
+    pipeline_name: str,
+    run_dir: Path,
+    prompt: str,
+    flatten_output: bool = False,
+) -> Dict[str, Any]:
     common_kwargs = build_common_kwargs(cfg, prompt)
 
     if pipeline_name == "vqa_score":
@@ -84,12 +91,36 @@ def run_single_pipeline(runner, cfg: DictConfig, pipeline_name: str, run_dir: Pa
         runner.run_cfg.guidance_scale = cfg.run.guidance_scale
         runner.run_cfg.seed = cfg.run.seed
         runner.run_cfg.batch_size = cfg.run.batch_size
+        if flatten_output:
+            runner.guidance_cfg.final_img_filename = "vqa_score.png"
+            return runner.run(
+                run_dir,
+                prompt_filename="vqa_score_prompt.txt",
+                scores_filename="vqa_score_scores.json",
+                summary_filename="vqa_score_result_summary.json",
+            )
         return runner.run(run_dir / "vqa_score")
 
     if pipeline_name == "vanilla_sd":
+        if flatten_output:
+            return runner.run(
+                run_dir,
+                image_filename_template="vanilla_sd_{index:02d}.png",
+                prompt_filename="vanilla_sd_prompt.txt",
+                summary_filename="vanilla_sd_result_summary.json",
+                **common_kwargs,
+            )
         return runner.run(run_dir / "vanilla_sd", **common_kwargs)
 
     if pipeline_name == "flux1":
+        if flatten_output:
+            return runner.run(
+                run_dir,
+                image_filename_template="flux1_{index:02d}.png",
+                prompt_filename="flux1_prompt.txt",
+                summary_filename="flux1_result_summary.json",
+                **common_kwargs,
+            )
         return runner.run(run_dir / "flux1", **common_kwargs)
 
     raise ValueError(f"Unknown pipeline: {pipeline_name}")
@@ -113,7 +144,12 @@ def release_runner_resources(runner) -> None:
                     pass
 
 
-def execute_selected_pipelines(cfg: DictConfig, run_dir: Path, prompt: str) -> Dict[str, Dict]:
+def execute_selected_pipelines(
+    cfg: DictConfig,
+    run_dir: Path,
+    prompt: str,
+    flatten_output: bool = False,
+) -> Dict[str, Dict]:
     run_dir.mkdir(parents=True, exist_ok=True)
     results: Dict[str, Dict] = {}
 
@@ -126,6 +162,7 @@ def execute_selected_pipelines(cfg: DictConfig, run_dir: Path, prompt: str) -> D
                 pipeline_name=pipeline_name,
                 run_dir=run_dir,
                 prompt=prompt,
+                flatten_output=flatten_output,
             )
             save_prompt_summary(results, run_dir)
         finally:

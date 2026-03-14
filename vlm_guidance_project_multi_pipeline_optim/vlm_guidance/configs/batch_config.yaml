@@ -21,6 +21,6 @@ run:
   flux1: false
 
 batch:
-  prompts_file: datasets/subset.txt
+  prompts_file: ../datasets/subset.txt
   output_root_dir: subset
   skip_empty_lines: true

@@ -19,6 +19,15 @@ from vlm_guidance.utils.io import save_json
 
 log = logging.getLogger(__name__)
 
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+
+
+def _resolve_from_project_root(path_str: str) -> Path:
+    path = Path(path_str)
+    if path.is_absolute():
+        return path
+    return (PROJECT_ROOT / path).resolve()
+
 
 def read_prompts(path: str, skip_empty_lines: bool = True) -> List[str]:
     with open(path, "r", encoding="utf-8") as f:
@@ -44,9 +53,12 @@ def safe_prompt_dirname(index: int, prompt: str, max_len: int = 80) -> str:
 @hydra.main(version_base=None, config_path="configs", config_name="batch_config")
 def main(cfg: DictConfig) -> None:
     log.info("Resolved config:\n%s", OmegaConf.to_yaml(cfg, resolve=False))
-    prompts = read_prompts(cfg.batch.prompts_file, skip_empty_lines=cfg.batch.skip_empty_lines)
+    prompts_file = _resolve_from_project_root(cfg.batch.prompts_file)
+    output_root_dir = _resolve_from_project_root(cfg.batch.output_root_dir)
 
-    root_dir = Path.cwd() / cfg.batch.output_root_dir
+    prompts = read_prompts(str(prompts_file), skip_empty_lines=cfg.batch.skip_empty_lines)
+
+    root_dir = output_root_dir
     root_dir.mkdir(parents=True, exist_ok=True)
 
     prompt_dirs = [root_dir / safe_prompt_dirname(i, prompt) for i, prompt in enumerate(prompts)]
