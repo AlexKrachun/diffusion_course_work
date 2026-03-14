@@ -233,14 +233,27 @@ def _save_pairwise_difference_plots(prompt_indices: list[int], pipelines: list[s
         plt.close(fig)
 
 
-def _print_summary(grouped_scores: dict[str, list[float]]) -> None:
-    print("CLIP score summary:")
+def _summary_lines(grouped_scores: dict[str, list[float]]) -> list[str]:
+    lines = ["CLIP score summary:"]
     for pipeline, scores in sorted(grouped_scores.items(), key=lambda item: np.mean(item[1]), reverse=True):
         scores_array = np.asarray(scores, dtype=float)
-        print(
+        lines.append(
             f"- {pipeline}: n={len(scores)}, mean={np.mean(scores_array):.4f}, "
-            f"median={np.median(scores_array):.4f}, std={np.std(scores_array):.4f}"
+            f"median={np.median(scores_array):.4f}, std={np.std(scores_array):.4f}, "
+            f"min={np.min(scores_array):.4f}, max={np.max(scores_array):.4f}"
         )
+    return lines
+
+
+def _save_summary_text(grouped_scores: dict[str, list[float]], output_dir: Path) -> Path:
+    summary_path = output_dir / "clip_score_summary.txt"
+    summary_path.write_text("\n".join(_summary_lines(grouped_scores)) + "\n", encoding="utf-8")
+    return summary_path
+
+
+def _print_summary(grouped_scores: dict[str, list[float]]) -> None:
+    for line in _summary_lines(grouped_scores):
+        print(line)
 
 
 def main() -> None:
@@ -272,8 +285,10 @@ def main() -> None:
     _save_per_prompt_line_plot(prompt_indices, pipelines, matrix, output_dir, colors)
     _save_heatmap(prompt_indices, pipelines, matrix, output_dir)
     _save_pairwise_difference_plots(prompt_indices, pipelines, matrix, output_dir, colors)
+    summary_path = _save_summary_text(grouped_scores, output_dir)
     _print_summary(grouped_scores)
     print(f"Saved plots to {output_dir}")
+    print(f"Saved summary to {summary_path}")
 
 
 if __name__ == "__main__":

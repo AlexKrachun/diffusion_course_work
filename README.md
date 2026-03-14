@@ -50,14 +50,34 @@ python3 metrics/clip_visualize.py --input metrics/clip_score_complex_result.csv 
 
 
 Для подсчетам метрики alignment
+```shell
+export OPENAI_API_KEY="YOUR OPENA API KEY"
+
+python3 metrics/alignment_score_clalc.py \
+  -generations vlm_guidance_project_multi_pipeline_optim/simple_cases_generations \
+  --output metrics/alignment_score_simple_result.csv \
+  --api-key "$OPENAI_API_KEY" \
+  --concurrency 10
+
+python3 metrics/alignment_score_clalc.py \
+  -generations vlm_guidance_project_multi_pipeline_optim/complex_cases_generations \
+  --output metrics/alignment_score_complex_result.csv \
+  --api-key "$OPENAI_API_KEY" \
+  --concurrency 10
+
+```
+
+построить графики alignment и quality score по csv со значениями метрик
+```shell
+python3 metrics/alignment_visualize.py \
+  --input metrics/alignment_score_simple_result.csv \
+  --output-dir metrics/alignment_plots_simple_data
+
+python3 metrics/alignment_visualize.py \
+  --input metrics/alignment_score_complex_result.csv \
+  --output-dir metrics/alignment_plots_complex_data
+
+```
 
 
 
-
-смотри, мне надо оценить clip score n пайплайнов генерации изображений. В моем случае сейчас n = 3. Посмотри, как устроена папка vlm_guidance_project_multi_pipeline_optim/subset - там на есть множество папок - по одной на промпт. В каждой из этих папок есть по одной подпапке на каждый пайплайн: flux1, vanilla_sd, vqa_score - всего три пайплайна сейчас. Внутри каждой из этих подпапок есть изображение img.png и промпт prompt.txt. Соостветсвенно я хотел бы запустить
-
-python clip_score_clalc.py -generations vlm_guidance_project_multi_pipeline_optim/subset 
-
-и посчитать clip score для каждого изображения каждого пайплайна и записать результаты в metrics/result.csv, где на каждый пайплайн и каждый номер промпта (по порядку) был бы записал clip score соответствующего изображения и промпта. 
-
-напиши, основываясь на clip_score.py новый файл clip_score_clalc.py, который бы выполнил поставленную задачу при запуске
